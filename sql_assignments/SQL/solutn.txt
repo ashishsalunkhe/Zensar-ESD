@@ -1,0 +1,52 @@
+1. select * from emp;
+2. select distinct job from emp;
+3. select * from emp where hiredate < '01-Jan-81';
+4. select * from emp where deptno = 10 or deptno = 20;
+5. select * from emp where job ='CLERK' and deptno = 20;
+6. select * from emp where ename='SMITH';
+7. select * from emp where job='MANAGER';
+8. 
+9.select grade,ename from salgrade,emp where grade != 4 and deptno in (10,30) and hiredate <'31-dec-82';
+10. select ename from emp where to_char(hiredate,'DD')<15;
+11.select * from emp where job='MANAGER';
+12.select empno,ename,lpad(concat('$',round(sal*115/100)),7) salary from emp;
+13. create table emp_and_job as select * from emp;
+14.
+15.
+16.
+17.select * from emp where job='CLERK';
+18.select empno,sal,comm from emp;
+19.
+20.select ename from emp where hiredate = '1-May-81';
+21.
+22.select ename from emp where job='CLERK' or job='MANAGER';
+23.select ename from emp where hiredate = '1-May-81' or hiredate = '17-Nov-81' or hiredate='30-Dec-81';
+24.select ename from emp where to_char(hiredate,'YY')=81;
+25.select * from emp where sal > 2300 and sal<4000;
+26.select empno from emp where empno in (select mgr from emp where mgr in (7369,7890,7654,7900));
+27.select ename from emp where to_char(hiredate,'DD')>6 and to_char(hiredate,'YY')=81;
+28.select sal from emp where ename='MILLER' or ename='SMITH';
+29.select ename, sal from emp where sal>1000;
+30.select ename, sal from emp where ename NOT IN 'JAMES';
+31.select * from emp where comm>sal;
+32.select * from emp where (sal*12) between 22000 and 45000;
+33.select e.ename, e.job, m.ename Manager from emp e,emp m where e.mgr=m.empno union select ename,job,'no manager' from emp where mgr is null;
+34.
+35.
+36.
+37
+38.
+39.
+40.
+41.
+42.
+43.
+44.
+Q. select loc,count(*) no_emp from emp,dept where emp.deptno = dept.deptno group by loc;
+Q.Find out lis of emp who work under james manager
+A. select ename from emp where mgr = (select mgr from emp where ename like 'JAMES');
+Q. Display all the employee names and their manager names
+A. select e.ename, e.job, m.ename Manager from emp e,emp m where e.mgr=m.empno union select ename,job,'no manager' from emp;
+
+50.select e.ename, e.job, m.ename Manager from emp e,emp m where e.mgr=m.empno union select ename,job,'no manager' from emp where mgr is null;
+51.

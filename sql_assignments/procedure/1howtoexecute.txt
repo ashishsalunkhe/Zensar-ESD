@@ -1,0 +1,23 @@
+Enter user-name: system
+Enter password:
+
+Connected to:
+Oracle Database 10g Express Edition Release 10.2.0.1.0 - Production
+
+SQL> conn scott/tiger
+Connected.
+SQL> set serveroutput on;
+SQL> @C:\Users\Acer\Desktop\Zensar\sql_assignments\procedure\addition
+Enter value for no1: 100
+old   3:        num1 number :=&no1;
+new   3:        num1 number :=100;
+Enter value for no2: 200
+old   4:        num2 number :=&no2;
+new   4:        num2 number :=200;
+
+Procedure created.
+
+SQL> exec addition
+300
+
+PL/SQL procedure successfully completed.
